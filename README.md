@@ -1,14 +1,23 @@
 # YoloProject
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
+This project was generated with Angular version 15.0.0. and help of mongodb
 
-## Development server
+## Run project
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Frontend setup :-
 
-## Code scaffolding
+  install node module packages using    `npm install`
+  
+  After install node modules Run `ng serve` for a dev server. And Navigate to `http://localhost:4200/`.
+ 
+Backend setup :-
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+  run `npm run devStart`
+
+## other resources
+
+In `gameApi.rest` file include all the Rest APIs using `REST Client` extension in visual studio easily or can run in `Postman`  
+databse confige link is included in `.env` file and can connect using `MongoDBCompass` [****This is not a good practice but I included in this file****]
 
 ## Build
 
@@ -18,10 +27,4 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
