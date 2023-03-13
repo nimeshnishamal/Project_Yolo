@@ -8,11 +8,11 @@ Frontend setup :-
 
   install node module packages using    `npm install`
   
-  After install node modules Run `ng serve` for a dev server. And Navigate to `http://localhost:4200/`.
+  After install node modules Run `ng serve` for a dev server in *root-directory*. And Navigate to `http://localhost:4200/`.
  
 Backend setup :-
 
-  run `npm run devStart`
+  run `npm run devStart` command to run backend in *root-directory* as well
 
 ## other resources
 
