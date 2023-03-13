@@ -85,7 +85,6 @@ router.patch('/updateUser/:id', getUser, async (req, res) => {
 //middleware
 async function getUser(req, res, next) {
     let user
-    console.log('req', req)
     try {
         user = await User.find({userCode:req.params.id})
         if(user == null) {

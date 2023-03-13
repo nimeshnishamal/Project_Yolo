@@ -26,7 +26,6 @@ export class DetailsGameComponent implements OnInit {
     this.api.getRegisteredGameId(gameId)
       .subscribe(res=>{
         this.gameDetail = res;
-        console.log(this.gameDetail)
       })
   }
 }

@@ -86,7 +86,6 @@ router.patch('/updateGame/:id', getGame, async (req, res) => {
 //middleware
 async function getGame(req, res, next) {
     let game
-    console.log('req', req)
     try {
         game = await Game.find({gameCode:req.params.id})
         if(game == null) {

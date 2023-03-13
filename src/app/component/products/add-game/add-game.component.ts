@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { json } from 'express';
 import { NgToastService } from 'ng-angular-popup';
 import { game } from 'src/app/backend/models/game.model';
 import { ApiService } from 'src/app/backend/services/api.service';
@@ -30,21 +29,23 @@ constructor(private fb: FormBuilder, private router: Router, private activatedRo
       isSuitable: [''],
       creationDate: ['']
     });
-
-    this.activatedRoute.params.subscribe(val=>{
-      this.userIdToUpdate = val['id'];
-      this.api.getRegisteredGameId(this.userIdToUpdate)
-      .subscribe(res=>{
-        this.isUpdateActive = true;
-        this.fillFormToUpdate(res)
+      this.activatedRoute.params.subscribe(val=>{
+        this.userIdToUpdate = val['id'];
+        if(this.userIdToUpdate){
+          this.api.getRegisteredGameId(this.userIdToUpdate)
+            .subscribe(res=>{
+            this.isUpdateActive = true
+            this.fillFormToUpdate(res)
+        })
+        }
       })
-    })
   }
   submit(){
     this.api.postRegistrationGame(this.registerForm.value)
     .subscribe(res=>{
       this.toastService.success({ detail:"Sucess", summary:"Game added", duration:3000 });
       this.registerForm.reset();
+      this.router.navigate(['products'])
     })
   }
   update(){

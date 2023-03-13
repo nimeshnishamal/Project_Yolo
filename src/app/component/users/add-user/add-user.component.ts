@@ -31,12 +31,13 @@ export class AddUserComponent implements OnInit{
   
     this.activatedRoute.params.subscribe(val=>{
       this.userIdToUpdate = val['id'];
-      console.log('userIdToUpdate',this.userIdToUpdate)
-      this.api.getRegisteredUserId(this.userIdToUpdate)
-      .subscribe(res=>{
-          this.isUpdateActive = true;
-          this.fillFormToUpdate(res)
+      if(this.userIdToUpdate){
+        this.api.getRegisteredUserId(this.userIdToUpdate)
+          .subscribe(res=>{
+            this.isUpdateActive = true;
+            this.fillFormToUpdate(res)
       })
+      }
     })
   }
   submit(){
@@ -44,6 +45,7 @@ export class AddUserComponent implements OnInit{
     .subscribe(res=>{
       this.toastService.success({ detail:"Sucess", summary:"User added", duration:3000 });
       this.registerForm.reset();
+      this.router.navigate(['users'])
     })
   }
   update(){
