@@ -21,7 +21,7 @@
                     <mat-hint>Enter the User Full Name</mat-hint>
                 </mat-form-field>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 mt-4">
                 <mat-form-field appearance="outline">
                     <mat-label>User Email</mat-label>
                     <input formControlName="userEmail" matInput placeholder="Enter Email Address">
@@ -59,16 +59,14 @@
                 <mat-radio-group formControlName="isUserHavePreviousExperenceInYolo" aria-label="Do you previously worked at Yolo?">
                     <mat-radio-button value="Yes">Yes</mat-radio-button>
                     <mat-radio-button value="No">No</mat-radio-button>
-                </mat-radio-group>
-                <div>Selected option is: </div>    
+                </mat-radio-group>   
             </div>
             <div class="col-md-6 mt-3">
                 <label id="example-radio-group-label">Currently are you eligible to work at estonia?</label>
                 <mat-radio-group formControlName="isUserEstonianCitizen" aria-label="Currently are you eligible to work at estonia?">
                     <mat-radio-button value="Yes">Yes</mat-radio-button>
                     <mat-radio-button value="No">No</mat-radio-button>
-                </mat-radio-group>
-                <div>Selected option is: </div>    
+                </mat-radio-group>   
             </div>
         </div>
         <button *ngIf="!isUpdateActive" (click)="submit()" class="mt-4" mat-raised-button color="accent">Submit</button>

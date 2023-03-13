@@ -59,8 +59,7 @@
                 <mat-radio-group formControlName="isUnauthorized" aria-label="This game have unauthorized actions?">
                     <mat-radio-button value="Yes">Yes</mat-radio-button>
                     <mat-radio-button value="No">No</mat-radio-button>
-                </mat-radio-group>
-                <div>Selected option is: </div>    
+                </mat-radio-group>   
             </div>
             <div class="col-md-6 mt-3">
                 <label id="example-radio-group-label">Suitable for requirments?</label>
@@ -68,7 +67,6 @@
                     <mat-radio-button value="Yes">Yes</mat-radio-button>
                     <mat-radio-button value="No">No</mat-radio-button>
                 </mat-radio-group>
-                <div>Selected option is: </div>    
             </div>
         </div>
         <button *ngIf="!isUpdateActive" (click)="submit()" class="mt-4" mat-raised-button color="accent">Submit</button>
