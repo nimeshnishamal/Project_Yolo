@@ -5,10 +5,13 @@ This project was generated with Angular version 15.0.0. and help of mongodb
 ## Run project
 
 Frontend setup :-
-  install node packages using `npm install`
-  Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
+
+  install node module packages using    `npm install`
+  
+  After install node modules Run `ng serve` for a dev server. And Navigate to `http://localhost:4200/`.
  
 Backend setup :-
+
   run `npm run devStart`
 
 ## other resources
