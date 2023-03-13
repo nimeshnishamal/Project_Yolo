@@ -1,0 +1,67 @@
+<mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Yolo" #input>
+  </mat-form-field>
+  
+  <button routerLink="/products/add" class="right" mat-raised-button color="primary">Add Game</button>
+
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+  
+      <!-- Game Code Column -->
+      <ng-container matColumnDef="code">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Code </th>
+        <td mat-cell *matCellDef="let row"> {{row.gameCode}} </td>
+      </ng-container>
+  
+      <!-- Game Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+        <td mat-cell *matCellDef="let row"> {{row.gameName}} </td>
+      </ng-container>
+  
+      <!-- Game Category Column -->
+      <ng-container matColumnDef="category">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Category </th>
+        <td mat-cell *matCellDef="let row"> {{row.gameCategory}} </td>
+      </ng-container>
+  
+      <!-- Game Rate Column -->
+      <ng-container matColumnDef="rate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Rate </th>
+        <td mat-cell *matCellDef="let row"> {{row.gameRate}} </td>
+      </ng-container>
+
+      <!-- Game Creation Date Column -->
+      <ng-container matColumnDef="creationDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+        <td mat-cell *matCellDef="let row"> {{row.creationDate}} </td>
+      </ng-container>
+  
+      <!-- Game Description Column -->
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
+        <td mat-cell *matCellDef="let row"> {{row.gameDescription}} </td>
+      </ng-container>
+
+      <!-- Action Column -->
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+        <td mat-cell *matCellDef="let row">
+            <button [routerLink]="['/products/detail', row.gameCode]" mat-icon-button color="warn"><i class="fa fa-eye"></i></button>
+            <button (click)="edit(row.gameCode)" mat-icon-button color="accent"><i class="fa fa-pencil"></i></button>
+            <button (click)="delete(row.gameCode)" mat-icon-button color="primary"><i class="fa fa-trash"></i></button>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+      </tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of games"></mat-paginator>
+  </div>

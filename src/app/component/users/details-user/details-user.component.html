@@ -1,0 +1,47 @@
+<mat-card *ngIf="userDetail" class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{userDetail[0].userFullName}}</mat-card-title>
+      <mat-card-subtitle>{{userDetail[0].userCode}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-list>
+            <mat-list-item>
+                <div matLine>
+                    User Email :
+                    <button mat-button>{{userDetail[0].userEmail}}</button>
+                </div>
+            </mat-list-item>
+            <mat-list-item>
+                <div matLine>
+                    User Tel :
+                    <button mat-button>{{userDetail[0].userTel}}</button>
+                </div>
+            </mat-list-item>
+            <mat-list-item>
+                <div matLine>
+                    User Birthday :
+                    <button mat-button>{{userDetail[0].userBOD}}</button>
+                </div>
+            </mat-list-item>
+            <mat-list-item>
+                <div matLine>
+                    Description about User :
+                    <button mat-button>{{userDetail[0].userDescription}}</button>
+                </div>
+            </mat-list-item>
+            <mat-list-item>
+                <div matLine>
+                    Have previous Experience :
+                    <button mat-button>{{userDetail[0].isUserHavePreviousExperenceInYolo}}</button>
+                </div>
+            </mat-list-item>
+            <mat-list-item>
+                <div matLine>
+                    Estonian Citizen :
+                    <button mat-button>{{userDetail[0].isUserEstonianCitizen}}</button>
+                </div>
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card>

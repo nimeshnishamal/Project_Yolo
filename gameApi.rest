@@ -1,0 +1,67 @@
+//game APIs testing
+
+GET http://localhost:3000/game/gameList
+
+###
+GET http://localhost:3000/game/Yolo_GAME_0004
+
+###
+POST http://localhost:3000/game/addGame 
+Content-Type: application/json
+
+{
+    "gameCode": "YOLO_GAME_0002",
+    "gameName": "EA cricket",
+    "gameCategory": "Sports",
+    "gameRate": 8,
+    "creationDate": "2020-03-20T18:30:00.000Z",
+    "gameDescription": "Good graphic",
+    "isUnauthorized":  true,
+    "isSuitable": true
+}
+
+###
+DELETE http://localhost:3000/game/deleteGame/YOLO_GAME_0020
+
+###
+PATCH http://localhost:3000/game/updateGame/YOLO_GAME_0020
+Content-Type: application/json
+
+{
+    "gameName": "vknkgnkgndkg"
+}
+
+
+//user APIs testing
+
+###
+GET http://localhost:3000/user/userList
+
+###
+GET http://localhost:3000/user/Yolo_USER_001
+
+###
+POST http://localhost:3000/user/addUser 
+Content-Type: application/json
+
+{
+    "userCode": "Yolo_USER_002",
+    "userFullName": "A.A.Asela dev",
+    "userEmail": "ishamal1999@gmail.com",
+    "userTel": "0783800450",
+    "userBOD": "1999-02-27T18:30:00.000Z",
+    "userDescription": "I'm software engineer....",
+    "isUserHavePreviousExperenceInYolo":  true,
+    "isUserEstonianCitizen": true
+}
+
+###
+DELETE http://localhost:3000/user/deleteUser/Yolo_USER_002
+
+###
+PATCH http://localhost:3000/user/updateUser/Yolo_USER_001
+Content-Type: application/json
+
+{
+    "userFullName": "A.L.G.signha"
+}

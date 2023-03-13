@@ -1,0 +1,58 @@
+<mat-card *ngIf="gameDetail" class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{gameDetail[0].gameName}}</mat-card-title>
+      <mat-card-subtitle>{{gameDetail[0].gameCode}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-list>
+            <mat-list-item>
+                <div matLine>
+                    Game Rate :
+                    <button mat-button>{{gameDetail[0].gameRate}}</button>
+                </div>
+            </mat-list-item>
+            <mat-list-item>
+                <div matLine>
+                    Description about Game :
+                    <button mat-button>{{gameDetail[0].gameDescription}}</button>
+                </div>
+            </mat-list-item>
+            <mat-list-item>
+                <div matLine>
+                    Creation Date :
+                    <button mat-button>{{gameDetail[0].creationDate}}</button>
+                </div>
+            </mat-list-item>
+            <mat-list-item>
+                <div matLine>
+                    Game Is Suitable :
+                    <button mat-button>{{gameDetail[0].isSuitable}}</button>
+                </div>
+            </mat-list-item>
+            <mat-list-item>
+                <div matLine>
+                    Game Is authorized :
+                    <button mat-button>{{gameDetail[0].isUnauthorized}}</button>
+                </div>
+            </mat-list-item>
+            <mat-list-item>
+                <div matLine>
+                    Game Category :
+                    <button mat-button>
+                        <mat-chip-listbox>
+                            <ng-container *ngFor="let row of gameDetail[0].gameCategory">
+                                <mat-chip-option selected>
+                                    {{row}}
+                                </mat-chip-option>
+                            </ng-container>
+                        </mat-chip-listbox>
+                    </button>
+                </div>
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card>
+  
+
+  

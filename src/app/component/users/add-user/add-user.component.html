@@ -1,0 +1,77 @@
+<div class="logo text-center">
+    <img src="../../../../assets/yolo_logo.png" alt="">
+</div>
+
+<div class="registration-form m-3 p-4">
+    <form [formGroup]="registerForm">
+        <div class="row">
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>User Code</mat-label>
+                    <input formControlName="userCode" matInput placeholder="Enter User Code">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                    <mat-hint>Yolo_USER_00xx</mat-hint>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>User Full Name</mat-label>
+                    <input formControlName="userFullName" matInput placeholder="Enter Full Name">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                    <mat-hint>Enter the User Full Name</mat-hint>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>User Email</mat-label>
+                    <input formControlName="userEmail" matInput placeholder="Enter Email Address">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                    <mat-hint>Enter valid email(xxxx@gmail.com)</mat-hint>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6 mt-4">
+                <mat-form-field appearance="outline">
+                    <mat-label>User Tel</mat-label>
+                    <input formControlName="userTel" matInput placeholder="Enter telephone Number">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                    <mat-hint>+372xxxxxxxx</mat-hint>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6 mt-4">
+                <mat-form-field appearance="outline">
+                    <mat-label>Description about User</mat-label>
+                    <input formControlName="userDescription" matInput placeholder="Describe about you">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                    <mat-hint>Max 100 words</mat-hint>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6 mt-4">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Birthday</mat-label>
+                    <input formControlName="userBOD" matInput [matDatepicker]="picker">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+            </div>  
+            <div class="col-md-6 mt-3">
+                <label id="example-radio-group-label">Do you previously worked at Yolo?</label>
+                <mat-radio-group formControlName="isUserHavePreviousExperenceInYolo" aria-label="Do you previously worked at Yolo?">
+                    <mat-radio-button value="Yes">Yes</mat-radio-button>
+                    <mat-radio-button value="No">No</mat-radio-button>
+                </mat-radio-group>
+                <div>Selected option is: </div>    
+            </div>
+            <div class="col-md-6 mt-3">
+                <label id="example-radio-group-label">Currently are you eligible to work at estonia?</label>
+                <mat-radio-group formControlName="isUserEstonianCitizen" aria-label="Currently are you eligible to work at estonia?">
+                    <mat-radio-button value="Yes">Yes</mat-radio-button>
+                    <mat-radio-button value="No">No</mat-radio-button>
+                </mat-radio-group>
+                <div>Selected option is: </div>    
+            </div>
+        </div>
+        <button *ngIf="!isUpdateActive" (click)="submit()" class="mt-4" mat-raised-button color="accent">Submit</button>
+        <button *ngIf="isUpdateActive" (click)="update()" class="mt-4" mat-raised-button color="accent">Update</button>
+    </form>
+</div>

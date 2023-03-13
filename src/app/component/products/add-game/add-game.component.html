@@ -1,0 +1,77 @@
+<div class="logo text-center">
+    <img src="../../../../assets/yolo_logo.png" alt="">
+</div>
+
+<div class="registration-form m-3 p-4">
+    <form [formGroup]="registerForm">
+        <div class="row">
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Game Code</mat-label>
+                    <input formControlName="gameCode" matInput placeholder="Game Code">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                    <mat-hint>Yolo_xxxx_00xx</mat-hint>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Game Name</mat-label>
+                    <input formControlName="gameName" matInput placeholder="Game Name">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                    <mat-hint>Enter the Game Name</mat-hint>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6 mt-4">
+                <mat-form-field appearance="outline">
+                    <mat-label>Game Category</mat-label>
+                    <mat-select formControlName="gameCategory" multiple>
+                      <mat-option *ngFor="let package of packages" [value]="package">{{package}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+            <div class="col-md-6 mt-4">
+                <mat-form-field appearance="outline">
+                    <mat-label>Game Rate</mat-label>
+                    <input formControlName="gameRate" matInput placeholder="Game Rate">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                    <mat-hint>??/10</mat-hint>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6 mt-4">
+                <mat-form-field appearance="outline">
+                    <mat-label>Description about game</mat-label>
+                    <input formControlName="gameDescription" matInput placeholder="Game Rate">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                    <mat-hint>100 words</mat-hint>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6 mt-4">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Creation date</mat-label>
+                    <input formControlName="creationDate" matInput [matDatepicker]="picker">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+            </div>  
+            <div class="col-md-6 mt-3">
+                <label id="example-radio-group-label">any unauthorized actions?</label>
+                <mat-radio-group formControlName="isUnauthorized" aria-label="This game have unauthorized actions?">
+                    <mat-radio-button value="Yes">Yes</mat-radio-button>
+                    <mat-radio-button value="No">No</mat-radio-button>
+                </mat-radio-group>
+                <div>Selected option is: </div>    
+            </div>
+            <div class="col-md-6 mt-3">
+                <label id="example-radio-group-label">Suitable for requirments?</label>
+                <mat-radio-group formControlName="isSuitable" aria-label="Suitable for requirments?">
+                    <mat-radio-button value="Yes">Yes</mat-radio-button>
+                    <mat-radio-button value="No">No</mat-radio-button>
+                </mat-radio-group>
+                <div>Selected option is: </div>    
+            </div>
+        </div>
+        <button *ngIf="!isUpdateActive" (click)="submit()" class="mt-4" mat-raised-button color="accent">Submit</button>
+        <button *ngIf="isUpdateActive" (click)="update()" class="mt-4" mat-raised-button color="accent">Update</button>
+    </form>
+</div>
